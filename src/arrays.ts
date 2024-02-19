@@ -123,7 +123,6 @@ export function makeMath(addends: number[]): string {
 export function injectPositive(values: number[]): number[] {
     const newnewvalues = values.slice();
     const negIndex = values.findIndex((value: number): boolean => value < 0);
-    console.log(negIndex);
     const newvalues = values.slice(0, negIndex);
     const sum = newvalues.reduce(
         (currentTotal: number, num: number) => currentTotal + num,
