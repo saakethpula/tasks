@@ -87,7 +87,6 @@ describe("Testing the array functions", () => {
 
     //////////////////////////////////
     // removeDollars
-
     const AMOUNTS_1 = ["$1", "$2", "$3"];
     const AMOUNTS_2 = ["$100", "$200", "$300", "$400"];
     const AMOUNTS_3 = ["$5"];
@@ -96,7 +95,6 @@ describe("Testing the array functions", () => {
     const AMOUNTS_6: string[] = [];
     const AMOUNTS_7 = ["100", "???", "7", "$233", "", "$"];
     const AMOUNTS_8 = ["$one", "two", "$three"];
-
     // Ensure that none of the arrays were changed mutably
     // If you fail these, you aren't using map/filter/reduce/etc. properly!
     afterEach(() => {
