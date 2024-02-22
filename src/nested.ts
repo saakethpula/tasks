@@ -272,8 +272,8 @@ export function duplicateQuestionInArray(
     const indexof = questions.findIndex(
         (question: Question) => targetId == question.id
     );
-    const oldQuestion = questions[indexof];
+    const oldQuestion1 = questions[indexof];
     const newarray = questions.slice();
-    newarray.splice(indexof + 1, 0, duplicateQuestion(newId, oldQuestion));
+    newarray.splice(indexof + 1, 0, duplicateQuestion(newId, oldQuestion1));
     return newarray;
 }
