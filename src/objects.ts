@@ -5,6 +5,7 @@ import { Question, QuestionType } from "./interfaces/question";
  * `expected` should be empty strings, the `options` should be an empty list, the `points`
  * should default to 1, and `published` should default to false.
  */
+
 export function makeBlankQuestion(
     id: number,
     name: string,
@@ -115,7 +116,9 @@ export function renameQuestion(question: Question, newName: string): Question {
  * published; if it was published, now it should be not published.
  */
 export function publishQuestion(question: Question): Question {
-    const newnewQuestion = { ...question, published: !question.published };
+    const newnewQuestion = { ...question };
+    const check = question.published;
+    newnewQuestion.published = !check;
     return newnewQuestion;
 }
 
