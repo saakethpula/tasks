@@ -103,11 +103,9 @@ export function allRGB(colors: string[]): boolean {
 export function makeMath(addends: number[]): string {
     const number = addends.reduce((acc, curr) => acc + curr, 0);
     if (addends.length != 0) {
-        return number.toString() + "=" + addends.join().replaceAll(",", "+");
+        return number.toString() + "=" + addends.join("+");
     } else {
-        return (
-            number.toString() + "=" + addends.join().replaceAll(",", "+") + "0"
-        );
+        return "0=0";
     }
 }
 
