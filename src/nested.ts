@@ -220,8 +220,8 @@ export function changeQuestionTypeById(
             question.id != targetId
                 ? { ...question }
                 : newQuestionType == "short_answer_question"
-                    ? { ...question, type: newQuestionType, options: [] }
-                    : { ...question, type: newQuestionType }
+                ? { ...question, type: newQuestionType, options: [] }
+                : { ...question, type: newQuestionType }
     );
     return newQuestion;
 }
