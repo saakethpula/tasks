@@ -1,4 +1,6 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable indent */
+
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 import { duplicateQuestion, makeBlankQuestion } from "./objects";
@@ -37,7 +39,7 @@ export function findQuestion(
     questions: Question[],
     id: number
 ): Question | null {
-    return questions.find((question) => question.id === id) || null;
+    return questions.find((question: Question) => question.id === id) || null;
 }
 
 /**
