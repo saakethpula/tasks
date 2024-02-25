@@ -1,6 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable indent */
-
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 import { duplicateQuestion, makeBlankQuestion } from "./objects";
@@ -217,15 +214,18 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    const newQuestion = questions.map(
-        (question: Question): Question =>
-            question.id != targetId
-                ? { ...question }
-                : newQuestionType == "short_answer_question"
-                ? { ...question, type: newQuestionType, options: [] }
-                : { ...question, type: newQuestionType }
-    );
-    return newQuestion;
+    const newQuestions = questions.map((question: Question): Question => {
+        if (question.id !== targetId) {
+            return { ...question };
+        } else {
+            if (newQuestionType === "short_answer_question") {
+                return { ...question, type: newQuestionType, options: [] };
+            } else {
+                return { ...question, type: newQuestionType };
+            }
+        }
+    });
+    return newQuestions;
 }
 
 /**
@@ -244,19 +244,20 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    const editor = questions.map(
-        (question: Question): Question =>
-            question.id != targetId
-                ? { ...question }
-                : targetOptionIndex == -1
-                ? { ...question, options: [...question.options, newOption] }
-                : {
-                      ...question,
-                      options: question.options.map((option, index) =>
-                          index === targetOptionIndex ? newOption : option
-                      )
-                  }
-    );
+    const editor = questions.map((question: Question): Question => {
+        if (question.id !== targetId) {
+            return { ...question };
+        } else if (targetOptionIndex === -1) {
+            return { ...question, options: [...question.options, newOption] };
+        } else {
+            return {
+                ...question,
+                options: question.options.map((option, index) =>
+                    index === targetOptionIndex ? newOption : option
+                )
+            };
+        }
+    });
     return editor;
 }
 
