@@ -149,7 +149,7 @@ export function addOption(question: Question, newOption: string): Question {
     const newOptions = question.options;
     const copyQuestion = {
         ...question,
-        options: [...question.options, newOption]
+        options: [...newOptions, newOption]
     };
     return copyQuestion;
 }
