@@ -1,9 +1,11 @@
 import React from "react";
 import "./App.css";
-import { Button } from "react-bootstrap";
-import { Container } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { StartAttempt } from "./components/StartAttempt";
+import { TwoDice } from "./components/TwoDice";
+import { CycleHoliday } from "./components/CycleHoliday";
+import { Counter } from "./components/Counter";
 
 import img from "./rOphhcP.jpeg";
 function App(): JSX.Element {
@@ -12,41 +14,18 @@ function App(): JSX.Element {
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript
             </header>
-            <p>
-                Saaketh Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload. Hello World.
-            </p>
-            <div className="New-header">
-                <h1>This is the new header</h1>
-            </div>
-            <p>My Favorite Games:</p>
-            <ul>
-                <li>Assetto Corsa</li>
-                <li>Terraria</li>
-                <li>Fortnite</li>
-            </ul>
-            <Button onClick={() => console.log("Hello World!")}>
-                Log Hello World
-            </Button>
-            <img src={img} alt="An Audi R8 pictured from Assetto Corsa" />
-            <Container>
-                <Row>
-                    <Col>
-                        Assetto Corsa:
-                        <p>It is fun, cheap, and realistic</p>{" "}
-                        <div className="redBox"></div>
-                        <p> </p>
-                    </Col>
-                    <Col>
-                        Reasons I hate Assetto Corsa:
-                        <p>
-                            I have wasted thousands of hours on this game
-                        </p>{" "}
-                        <div className="redBox"> </div>
-                        <p> </p>
-                    </Col>
-                </Row>
-            </Container>
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <StartAttempt></StartAttempt>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
+            <hr />
+            <CycleHoliday></CycleHoliday>
         </div>
     );
 }
